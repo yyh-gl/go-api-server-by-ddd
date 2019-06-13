@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/yyh-gl/api-server-with-go-kit-and-ddd/infra"
+	"github.com/yyh-gl/go-api-server-by-ddd/infra"
 )
 
 func main() {
