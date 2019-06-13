@@ -1,2 +1,4 @@
 github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+9HbQbYf7g=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
+github.com/yyh-gl/api-server-with-go-kit-and-ddd v0.0.0-20190613051013-e6441d74b5f3 h1:+g+zjnsmWGTPKEZmFYYiiHMyWin6jiZXVhYjXPZDdto=
+github.com/yyh-gl/api-server-with-go-kit-and-ddd v0.0.0-20190613051013-e6441d74b5f3/go.mod h1:5/A/GsPTvDGQ4p8sacI1lNBVLh2UYtE6Qo5fy3GIbYo=
