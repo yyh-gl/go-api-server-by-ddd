@@ -1,8 +1,7 @@
-package infra
+package handler
 
 import (
 	"github.com/julienschmidt/httprouter"
-	"github.com/yyh-gl/go-api-server-by-ddd/handler"
 )
 
 var Router *httprouter.Router
@@ -10,7 +9,7 @@ var Router *httprouter.Router
 func init() {
 	router := httprouter.New()
 
-	router.GET("/books", handler.BookIndex)
+	router.GET("/books", BookIndex)
 
 	Router = router
 }

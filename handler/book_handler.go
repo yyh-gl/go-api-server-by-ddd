@@ -2,17 +2,18 @@ package handler
 
 import (
 	"encoding/json"
+	"net/http"
+
 	"github.com/julienschmidt/httprouter"
 	"github.com/yyh-gl/go-api-server-by-ddd/domain/model"
 	"github.com/yyh-gl/go-api-server-by-ddd/usecase"
-	"net/http"
 )
 
 func BookIndex(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
 	var books []*model.Book
 	var err error
 	books, err = usecase.IBookUsecase(usecase.BookUsecase{}).GetAll()
-	if err == nil {
+	if err != nil {
 		// TODO: エラーハンドリングをきちんとする
 		http.Error(w, "Internal Server Error", 500)
 		return
