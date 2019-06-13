@@ -12,7 +12,7 @@ import (
 func BookIndex(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
 	var books []*model.Book
 	var err error
-	books, err = usecase.IBookUsecase(usecase.BookUsecase{}).GetAll()
+	books, err = usecase.BookUsecase{}.GetAll()
 	if err != nil {
 		// TODO: エラーハンドリングをきちんとする
 		http.Error(w, "Internal Server Error", 500)

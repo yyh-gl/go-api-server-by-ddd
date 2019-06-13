@@ -8,10 +8,6 @@ import (
 
 type BookUsecase struct {}
 
-type IBookUsecase interface {
-	GetAll() ([]*model.Book, error)
-}
-
 func (bookUsecase BookUsecase) GetAll() ([]*model.Book, error) {
 	var books []*model.Book
 	var err error
