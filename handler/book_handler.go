@@ -12,14 +12,16 @@ func BookIndex(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
 	var books []*model.Book
 	var err error
 	books, err = usecase.IBookUsecase(usecase.BookUsecase{}).GetAll()
-	if err != nil {
-		// TODO: エラーレスポンスを返す
-		panic(err)
+	if err == nil {
+		// TODO: エラーハンドリングをきちんとする
+		http.Error(w, "Internal Server Error", 500)
+		return
 	}
 
 	w.Header().Set("Content-Type", "application/json")
 	if err = json.NewEncoder(w).Encode(books); err != nil {
-		// TODO: エラーレスポンスを返す
-		panic(err)
+		// TODO: エラーハンドリングをきちんとする
+		http.Error(w, "Internal Server Error", 500)
+		return
 	}
 }
