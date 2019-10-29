@@ -7,7 +7,7 @@ import (
 	"github.com/yyh-gl/go-api-server-by-ddd/domain/repository"
 )
 
-// BookUseCase : Book における UseCase のインターフェイス
+// BookUseCase : Book における UseCase のインターフェース
 type BookUseCase interface {
 	GetAll(context.Context) ([]*model.Book, error)
 }

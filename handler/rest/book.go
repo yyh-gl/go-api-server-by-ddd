@@ -11,7 +11,7 @@ import (
 	"github.com/yyh-gl/go-api-server-by-ddd/usecase"
 )
 
-// BookHandler : Book における Handler のインターフェイス
+// BookHandler : Book における Handler のインターフェース
 type BookHandler interface {
 	Index(http.ResponseWriter, *http.Request, httprouter.Params)
 }
