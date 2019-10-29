@@ -1,4 +1,4 @@
-package handler
+package rest
 
 import (
 	"encoding/json"
@@ -11,7 +11,7 @@ import (
 
 // BookHandler : Book における Handler のインターフェイス
 type BookHandler interface {
-	Index(w http.ResponseWriter, _ *http.Request, _ httprouter.Params)
+	Index(http.ResponseWriter, *http.Request, httprouter.Params)
 }
 
 type bookHandler struct {
@@ -26,12 +26,14 @@ func NewBookHandler(bu usecase.BookUseCase) BookHandler {
 }
 
 // BookIndex : GET /books -> Book データ一覧を返す
-func (bh bookHandler) Index(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
+func (bh bookHandler) Index(w http.ResponseWriter, r *http.Request, pr httprouter.Params) {
 	var books []*model.Book
 	var err error
 
+	ctx := r.Context()
+
 	// ユースケースの呼出
-	books, err = bh.bookUseCase.GetAll()
+	books, err = bh.bookUseCase.GetAll(ctx)
 	if err != nil {
 		// TODO: エラーハンドリングをきちんとする
 		http.Error(w, "Internal Server Error", 500)

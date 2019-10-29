@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/yyh-gl/go-api-server-by-ddd/infra/persistence"
-	"github.com/yyh-gl/go-api-server-by-ddd/usecase"
 	"log"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/yyh-gl/go-api-server-by-ddd/handler"
+	handler "github.com/yyh-gl/go-api-server-by-ddd/handler/rest"
+	"github.com/yyh-gl/go-api-server-by-ddd/infra/persistence"
+	"github.com/yyh-gl/go-api-server-by-ddd/usecase"
 )
 
 func main() {

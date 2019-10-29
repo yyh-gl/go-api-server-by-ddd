@@ -2,6 +2,7 @@ package persistence
 // repository という名前にしたいが domain 配下の repository とパッケージ名が被ってしまうため persistence で代替
 
 import (
+	"context"
 	"github.com/yyh-gl/go-api-server-by-ddd/domain/repository"
 	"time"
 
@@ -17,7 +18,7 @@ func NewBookPersistence() repository.BookRepository {
 
 // GetAll : DB から Book データを全件取得（BookRepository インターフェースの GetAll() を実装したもの）
 //  -> 本来は DB からデータを取得するが、簡略化のために省略（モックデータを返却）
-func (bp bookPersistence) GetAll() ([]*model.Book, error) {
+func (bp bookPersistence) GetAll(context.Context) ([]*model.Book, error) {
 	book1 := model.Book{}
 	book1.Id = 1
 	book1.Title = "Test1"
