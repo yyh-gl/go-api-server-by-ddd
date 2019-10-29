@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	// 依存関係を注入
+	// 依存関係を注入（DI まではいきませんが一応注入っぽいことをしてる）
 	// DI ライブラリを使えば、もっとスマートになるはず
 	bookPersistence := persistence.NewBookPersistence()
 	bookUseCase := usecase.NewBookUseCase(bookPersistence)
