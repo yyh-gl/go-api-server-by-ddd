@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"context"
+
 	"github.com/yyh-gl/go-api-server-by-ddd/domain/model"
 	"github.com/yyh-gl/go-api-server-by-ddd/domain/repository"
 )
@@ -12,13 +13,13 @@ type BookUseCase interface {
 }
 
 type bookUseCase struct {
-	bookPersistence repository.BookRepository
+	bookRepository repository.BookRepository
 }
 
 // NewBookUseCase : Book データに関する UseCase を生成
 func NewBookUseCase(br repository.BookRepository) BookUseCase {
 	return &bookUseCase{
-		bookPersistence: br,
+		bookRepository: br,
 	}
 }
 
@@ -27,7 +28,7 @@ func NewBookUseCase(br repository.BookRepository) BookUseCase {
 //    「ドメインモデルの調節者」としての役割が見えてくる
 func (bu bookUseCase) GetAll(ctx context.Context) (books []*model.Book, err error) {
 	// Persistence（Repository）を呼出
-	books, err = bu.bookPersistence.GetAll(ctx)
+	books, err = bu.bookRepository.GetAll(ctx)
 	if err != nil {
 		return nil, err
 	}

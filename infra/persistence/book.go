@@ -6,9 +6,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/yyh-gl/go-api-server-by-ddd/domain/repository"
-
 	"github.com/yyh-gl/go-api-server-by-ddd/domain/model"
+	"github.com/yyh-gl/go-api-server-by-ddd/domain/repository"
 )
 
 type bookPersistence struct{}
